@@ -9,7 +9,7 @@ require (
 	github.com/asdine/storm v0.0.0-20190418133842-e0f77eada154
 	github.com/asottile/dockerfile v3.1.0+incompatible
 	github.com/cavaliercoder/grab v1.0.1-0.20201108051000-98a5bfe305ec
-	github.com/containerd/containerd v1.6.3-0.20220401172941-5ff8fce1fcc6
+	github.com/containerd/containerd v1.6.26
 	github.com/crillab/gophersat v1.3.2-0.20210701121804-72b19f5b6b38
 	github.com/docker/cli v20.10.13+incompatible
 	github.com/docker/distribution v2.8.0+incompatible
@@ -29,12 +29,12 @@ require (
 	github.com/ipfs/go-log/v2 v2.4.0
 	github.com/jinzhu/copier v0.0.0-20180308034124-7e38e58719c3
 	github.com/kendru/darwin/go/depgraph v0.0.0-20220319173517-8abc3541da93
-	github.com/klauspost/compress v1.15.1
+	github.com/klauspost/compress v1.15.9
 	github.com/klauspost/pgzip v1.2.5
 	github.com/knqyf263/go-deb-version v0.0.0-20190517075300-09fca494f03d
 	github.com/kyokomi/emoji v2.1.0+incompatible
 	github.com/marcsauter/single v0.0.0-20181104081128-f8bf46f26ec0
-	github.com/mattn/go-isatty v0.0.14
+	github.com/mattn/go-isatty v0.0.17
 	github.com/mitchellh/copystructure v1.2.0 // indirect
 	github.com/mitchellh/hashstructure/v2 v2.0.2
 	github.com/mitchellh/mapstructure v1.4.2 // indirect
@@ -43,12 +43,12 @@ require (
 	github.com/mudler/cobra-extensions v0.0.0-20200612154940-31a47105fe3d
 	github.com/mudler/go-pluggable v0.0.0-20211206135551-9263b05c562e
 	github.com/mudler/topsort v0.0.0-20201103161459-db5c7901c290
-	github.com/onsi/ginkgo/v2 v2.0.0
+	github.com/onsi/ginkgo/v2 v2.1.3
 	github.com/onsi/gomega v1.17.0
 	github.com/opencontainers/go-digest v1.0.0
-	github.com/opencontainers/image-spec v1.0.3-0.20211202183452-c5a74bcca799
+	github.com/opencontainers/image-spec v1.1.0-rc2.0.20221005185240-3a7f492d3f1b
 	github.com/otiai10/copy v1.2.1-0.20200916181228-26f84a0b1578
-	github.com/pelletier/go-toml v1.9.4
+	github.com/pelletier/go-toml v1.9.5
 	github.com/peterbourgon/diskv v2.0.1+incompatible
 	github.com/pkg/errors v0.9.1
 	github.com/pterm/pterm v0.12.32-0.20211002183613-ada9ef6790c3
@@ -57,13 +57,13 @@ require (
 	github.com/spf13/cobra v1.2.1
 	github.com/spf13/viper v1.8.1
 	github.com/theupdateframework/notary v0.7.0
-	go.etcd.io/bbolt v1.3.6
+	go.etcd.io/bbolt v1.3.7
 	go.uber.org/multierr v1.6.0
 	go.uber.org/zap v1.17.0
-	golang.org/x/mod v0.4.2
-	golang.org/x/term v0.0.0-20210927222741-03fcf44c2211
+	golang.org/x/mod v0.11.0
+	golang.org/x/term v0.13.0
 	gopkg.in/ini.v1 v1.63.2 // indirect
 	gopkg.in/yaml.v2 v2.4.0
-	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
+	gopkg.in/yaml.v3 v3.0.1
 
 )
