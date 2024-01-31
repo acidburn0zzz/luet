@@ -3,11 +3,13 @@ package client // import "github.com/docker/docker/client"
 import (
 	"context"
 	"encoding/json"
+	"net/http"
 	"net/url"
-	"strconv"
 
 	"github.com/docker/docker/api/types"
+	"github.com/docker/docker/api/types/registry"
 	"github.com/docker/docker/api/types/swarm"
+	"github.com/docker/docker/api/types/versions"
 )
 
 // ServiceUpdate updates a Service. The version number is required to avoid conflicting writes.
@@ -19,14 +21,6 @@ func (cli *Client) ServiceUpdate(ctx context.Context, serviceID string, version 
 		response = types.ServiceUpdateResponse{}
 	)
 
-	headers := map[string][]string{
-		"version": {cli.version},
-	}
-
-	if options.EncodedRegistryAuth != "" {
-		headers["X-Registry-Auth"] = []string{options.EncodedRegistryAuth}
-	}
-
 	if options.RegistryAuthFrom != "" {
 		query.Set("registryAuthFrom", options.RegistryAuthFrom)
 	}
@@ -35,7 +29,7 @@ func (cli *Client) ServiceUpdate(ctx context.Context, serviceID string, version 
 		query.Set("rollback", options.Rollback)
 	}
 
-	query.Set("version", strconv.FormatUint(version.Index, 10))
+	query.Set("version", version.String())
 
 	if err := validateServiceSpec(service); err != nil {
 		return response, err
@@ -60,6 +54,16 @@ func (cli *Client) ServiceUpdate(ctx context.Context, serviceID string, version 
 		}
 	}
 
+	headers := http.Header{}
+	if versions.LessThan(cli.version, "1.30") {
+		// the custom "version" header was used by engine API before 20.10
+		// (API 1.30) to switch between client- and server-side lookup of
+		// image digests.
+		headers["version"] = []string{cli.version}
+	}
+	if options.EncodedRegistryAuth != "" {
+		headers[registry.AuthHeader] = []string{options.EncodedRegistryAuth}
+	}
 	resp, err := cli.post(ctx, "/services/"+serviceID+"/update", query, service, headers)
 	defer ensureReaderClosed(resp)
 	if err != nil {

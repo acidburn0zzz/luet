@@ -1,9 +1,11 @@
 module github.com/Microsoft/go-winio
 
-go 1.12
+go 1.17
 
 require (
-	github.com/pkg/errors v0.9.1
-	github.com/sirupsen/logrus v1.7.0
-	golang.org/x/sys v0.0.0-20210124154548-22da62e12c0c
+	github.com/sirupsen/logrus v1.9.0
+	golang.org/x/sys v0.5.0
+	golang.org/x/tools v0.6.0
 )
+
+require golang.org/x/mod v0.8.0 // indirect
