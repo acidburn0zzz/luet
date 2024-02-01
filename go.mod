@@ -39,7 +39,9 @@ require (
 	github.com/mitchellh/hashstructure/v2 v2.0.2
 	github.com/mitchellh/mapstructure v1.4.2 // indirect
 	github.com/moby/buildkit v0.10.1 // indirect
-	github.com/moby/moby v20.10.9+incompatible
+	github.com/moby/moby v24.0.9+incompatible
+	github.com/moby/patternmatcher v0.6.0 // indirect
+	github.com/moby/sys/sequential v0.5.0 // indirect
 	github.com/mudler/cobra-extensions v0.0.0-20200612154940-31a47105fe3d
 	github.com/mudler/go-pluggable v0.0.0-20211206135551-9263b05c562e
 	github.com/mudler/topsort v0.0.0-20201103161459-db5c7901c290
